@@ -15,8 +15,16 @@ public class StringCalculator {
         {
             if(s.indexOf("\n")-s.indexOf("//")>3)
             {
+
+                String listDe = s.substring(3,s.indexOf("\n")-1);
+                String curDe[] = listDe.split(Pattern.quote("]["));
+                String list = "";
+                String curs[] = listDe.split(Pattern.quote("]["));
+                for(String i : curs)
+                    list = list+Pattern.quote(i+"+");
+                list ="["+list+"]";
                 String arc = s.substring(s.indexOf("\n")+1,s.length());
-                String cur[] = arc.split(Pattern.quote(s.substring(3,6)));
+                String cur[] = arc.split(list);
                 return Sum(cur);
             }
             else

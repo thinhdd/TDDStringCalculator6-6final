@@ -76,15 +76,22 @@ public class StringCalculatorTest {
     public void testTwoStringDeli()
     {
         StringCalculator sc = new StringCalculator();
-        Assert.assertEquals(sc.add("//[***][,,]\n1***2,3"), 6);
+        Assert.assertEquals(sc.add("//[***][,,]\n1***2,,3"), 6);
     }
 
 }
-class Check{
-    public static void main(String[] args) {
-        String s= "1***2,,4";
-        String cur[] = s.split("["+Pattern.quote("***")+"+"+Pattern.quote(",,")+"]");
-        for(String i : cur)
-            System.out.println(i);
-    }
-}
+//class Check{
+//    public static void main(String[] args) {
+//        String list ="";
+//        String s= "//[***][,,]\n1***2,,4";
+//        String arc = s.substring(s.indexOf("\n"),s.length()) ;
+//        String listDe = s.substring(3,s.indexOf("\n")-1);
+//        String curs[] = listDe.split(Pattern.quote("]["));
+//        for(String i : curs)
+//            list = list+Pattern.quote(i+"+");
+//        list ="["+list+"]";
+//        String cur[] = arc.split(list);
+//        for(String j : cur)
+//            System.out.println(j);
+//    }
+//}
